@@ -67,9 +67,6 @@ The Hoymiles Solar UI is a web application built with Flask to display real-time
 
     ```env
     SECRET_KEY=your_secret_key
-    USERNAME=your_username
-    PASSWORD=your_password
-    PLANT_ID=your_plant_id
     ```
 
 5. **Run the Flask application:**
