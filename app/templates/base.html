@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dark_mode.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body class="{% if session.get('dark_mode') %}dark-mode{% endif %}">
+    <nav class="{% if session.get('dark_mode') %}dark-mode{% endif %}">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Hoymiles Solar UI</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{{ url_for('main.index') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('main.plant_details') }}">Plant Details</a></li>
+                <li><a href="{{ url_for('main.device_list') }}">Devices</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <div class="switch">
+                        <label>
+                            Light
+                            <input type="checkbox" id="dark-mode-toggle" {% if session.get('dark_mode') %}checked{% endif %}>
+                            <span class="lever"></span>
+                            Dark
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        document.getElementById('dark-mode-toggle').addEventListener('change', function() {
+            fetch('/toggle_dark_mode', { method: 'POST' })
+                .then(response => location.reload());
+        });
+    </script>
+</body>
+</html>

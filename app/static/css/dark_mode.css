@@ -1,0 +1,33 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.nav-wrapper.dark-mode {
+    background-color: #1f1f1f;
+}
+
+.collection-item.dark-mode {
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
+}
+
+a.dark-mode {
+    color: #81c784; /* Light green */
+}
+
+a.dark-mode:hover {
+    color: #66bb6a; /* Darker green */
+}
+
+.secondary-content .material-icons.green-text.dark-mode {
+    color: #81c784; /* Light green */
+}
+
+.secondary-content .material-icons.red-text.dark-mode {
+    color: #e57373; /* Light red */
+}
+
+.secondary-content .material-icons.warning.dark-mode {
+    color: #ffa726; /* Orange */
+}

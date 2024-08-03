@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h3>Dashboard</h3>
+    <p><strong>Today's Energy:</strong> {{ data.today_eq }}</p>
+    <p><strong>Month's Energy:</strong> {{ data.month_eq }}</p>
+    <p><strong>Year's Energy:</strong> {{ data.year_eq }}</p>
+    <p><strong>Total Energy:</strong> {{ data.total_eq }}</p>
+    <p><strong>Real Power:</strong> {{ data.real_power }}</p>
+    <p><strong>CO2 Emission Reduction:</strong> {{ data.co2_emission_reduction }}</p>
+    <p><strong>Plant Trees:</strong> {{ data.plant_tree }}</p>
+{% endblock %}

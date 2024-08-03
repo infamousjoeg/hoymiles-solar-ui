@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Devices{% endblock %}
+
+{% block content %}
+    <h3>Device List</h3>
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Microinverter</th>
+                <th>Connected</th>
+                <th>Warning</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in devices %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('main.device_details', device_id=device.id) }}">{{ device.sn }} - {{ device.model_no }}</a>
+                </td>
+                <td>
+                    {% if device.warn_data.connect %}
+                    <i class="material-icons green-text">check_circle</i>
+                    {% else %}
+                    <i class="material-icons red-text">cancel</i>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if device.warn_data.warn %}
+                    <i class="material-icons red-text">warning</i>
+                    {% else %}
+                    <i class="material-icons green-text">check_circle</i>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

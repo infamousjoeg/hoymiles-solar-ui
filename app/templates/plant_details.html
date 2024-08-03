@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Plant Details{% endblock %}
+
+{% block content %}
+    <h3>Plant Details</h3>
+    <p><strong>Name:</strong> {{ details.name }}</p>
+    <p><strong>Address:</strong> {{ details.address }}</p>
+    <p><strong>Capacitor:</strong> {{ details.capacitor }}</p>
+    <p><strong>Electricity Price:</strong> {{ details.electricity_price }}</p>
+    <p><strong>Timezone:</strong> {{ details.timezone.dis_name }}</p>
+{% endblock %}

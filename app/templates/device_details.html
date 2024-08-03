@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Device Details{% endblock %}
+
+{% block content %}
+    <h3>Device Details</h3>
+    <p><strong>Serial Number:</strong> {{ device.sn }}</p>
+    <p><strong>Model Number:</strong> {{ device.model_no }}</p>
+    <p><strong>Software Version:</strong> {{ device.soft_ver }}</p>
+    <p><strong>Hardware Version:</strong> {{ device.hard_ver }}</p>
+    <p><strong>Connected:</strong> {{ device.warn_data.connect }}</p>
+    <p><strong>Warnings:</strong> {{ device.warn_data.warn }}</p>
+{% endblock %}
